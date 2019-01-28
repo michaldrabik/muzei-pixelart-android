@@ -1,6 +1,4 @@
-# Pixel Art for Muzei
-
-[<img alt="Get it on Google Play" height="90" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png">](https://play.google.com/store/apps/details?id=com.michaldrabik.muzeipixelartextension)
+[<p align="center"><img alt="Get it on Google Play" height="90" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"></p>](https://play.google.com/store/apps/details?id=com.michaldrabik.muzeipixelartextension)
 
 ## About
 
@@ -28,4 +26,5 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU General Public License for more details.  
-You should have received a copy of the GNU General Public License along with this program. If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+You should have received a copy of the GNU General Public License along with this program.   
+If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
