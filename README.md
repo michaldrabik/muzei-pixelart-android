@@ -5,7 +5,9 @@
 ## About
 
 This is an extension for the live wallpaper app [Muzei](http://get.muzei.co/) by Roman Nurik.  
-It requires Muzei to be installed.    
+It requires Muzei to be installed.
+
+This extension is powered by AWS services ([Link to repository](https://github.com/michaldrabik/muzei-pixelart-backend))
 
 **If you wish to add your own wallpaper into the database please open an issue with 'new wallpapper' label.**  
 **Thanks.**
