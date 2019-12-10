@@ -7,4 +7,5 @@
 	<string name="text_settings_author">Version %1$s\n©2019 Michal Drabik</string>
 	<string name="text_setup">1. Make sure latest version of the Muzei app is installed.\n\n2. Open Muzei and select \'Sources\' tab.\n\n3. Select Pixel Art for Muzei source and adjust update interval with spinning arrows icon in the right upper corner.</string>
 	<string name="text_rate">If you enjoy this extension\nClick here to rate it!\nThanks!</string>
+	<string name="text_download">Download Wallpaper</string>
 </resources>
