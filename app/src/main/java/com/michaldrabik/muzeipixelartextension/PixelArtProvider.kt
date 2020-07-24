@@ -55,7 +55,9 @@ class PixelArtProvider : MuzeiArtProvider() {
         context.getString(R.string.text_download),
         context.getString(R.string.text_download),
         PendingIntent.getActivity(context, 0, intent, 0)
-      )
+      ).apply {
+        setShouldShowIcon(false)
+      }
     )
   }
 }
