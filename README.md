@@ -24,7 +24,7 @@ This extension is powered by AWS services ([Link to repository](https://github.c
 
 ## License
 
-**Copyright 2019 Michal Drabik**
+**Copyright 2020 Michal Drabik**
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.  
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
