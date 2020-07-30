@@ -51,13 +51,13 @@ class PixelArtWorker(
     )
     val attributionString = applicationContext.getString(R.string.attribution)
     providerClient.addArtwork(images.map { image ->
-      Artwork().apply {
-        token = image.id
-        title = attributionString
-        attribution = attributionString
-        persistentUri = Uri.parse(image.url)
+      Artwork(
+        token = image.id,
+        title = attributionString,
+        attribution = attributionString,
+        persistentUri = Uri.parse(image.url),
         webUri = Uri.EMPTY
-      }
+      )
     })
 
     Result.success()

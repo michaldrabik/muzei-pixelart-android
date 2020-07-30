@@ -44,6 +44,18 @@
 				/>
 		</provider>
 
+		<provider
+			android:name="com.google.android.apps.muzei.api.provider.MuzeiArtDocumentsProvider"
+			android:authorities="${pixelArtAuthority}.documents"
+			android:exported="true"
+			android:grantUriPermissions="true"
+			android:permission="android.permission.MANAGE_DOCUMENTS"
+			>
+			<intent-filter>
+				<action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+			</intent-filter>
+		</provider>
+
 		<meta-data
 			android:name="io.fabric.ApiKey"
 			android:value="${fabricApiKey}"
