@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
   compileSdkVersion 30
@@ -9,16 +10,20 @@ android {
     applicationId "com.michaldrabik.muzeipixelartextension"
     minSdkVersion 19
     targetSdkVersion 29
-    versionCode 6
-    versionName "1.1.0"
+    versionCode 8
+    versionName "1.1.1"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     def authorityValue = "com.michaldrabik.muzeipixelartextensionauthority"
     manifestPlaceholders = [
-        pixelArtAuthority: authorityValue,
-        fabricApiKey     : getLocalProperty("local.properties", "fabricApiKey")
+        pixelArtAuthority: authorityValue
     ]
     buildConfigField "String", "PIXELART_AUTHORITY", "\"${authorityValue}\""
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 
   signingConfigs {
@@ -63,16 +68,15 @@ dependencies {
   implementation 'androidx.appcompat:appcompat:1.1.0'
   implementation 'android.arch.work:work-runtime:1.0.1'
 
-  implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-  implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
-  implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+  implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+  implementation 'com.squareup.retrofit2:converter-moshi:2.8.1'
+  implementation 'com.squareup.okhttp3:logging-interceptor:4.6.0'
 
   implementation 'com.google.android.apps.muzei:muzei-api:3.4.0'
-  implementation('com.crashlytics.sdk.android:crashlytics:2.9.8@aar') {
-    transitive = true
-  }
+  implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+  implementation 'com.google.firebase:firebase-analytics:17.4.4'
 
-  testImplementation 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.13'
 }
 
 def getLocalProperty(String fileName, String propertyName) {
