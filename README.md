@@ -15,11 +15,11 @@ This extension is powered by AWS services ([Link to repository](https://github.c
 ## Screenshots
 
 <div>
-   <img src="playstore/shot1.png" width="170" alt="screenshot 1">
-   <img src="playstore/shot4.png" width="170" alt="screenshot 1">
-   <img src="playstore/shot5.png" width="170" alt="screenshot 1">
-   <img src="playstore/shot2.png" width="170" alt="screenshot 1">
-   <img src="playstore/shot3.png" width="170" alt="screenshot 1">
+   <img src="playstore/shot1.png" width="165" alt="screenshot 1">
+   <img src="playstore/shot4.png" width="165" alt="screenshot 1">
+   <img src="playstore/shot5.png" width="165" alt="screenshot 1">
+   <img src="playstore/shot2.png" width="165" alt="screenshot 1">
+   <img src="playstore/shot3.png" width="165" alt="screenshot 1">
 </div>
 
 ## License
