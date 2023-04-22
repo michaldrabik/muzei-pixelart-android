@@ -4,8 +4,8 @@ import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -16,6 +16,9 @@ class SettingsActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_settings)
+
+    val textAuthor = findViewById<TextView>(R.id.textAuthor)
+    val textRate = findViewById<TextView>(R.id.textRate)
 
     textAuthor.text = getString(R.string.text_settings_author, BuildConfig.VERSION_NAME)
     textRate.setOnClickListener {
