@@ -1,6 +1,6 @@
 # Pixel Art for Muzei
 
-[<p align="center"><img alt="Get it on Google Play" height="90" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"></p>](https://play.google.com/store/apps/details?id=com.michaldrabik.muzeipixelartextension)
+[<img alt="Get it on Google Play" height="90" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png">](https://play.google.com/store/apps/details?id=com.michaldrabik.muzeipixelartextension)
 
 ## About
 
@@ -24,11 +24,13 @@ This extension is powered by AWS services ([Link to repository](https://github.c
 
 ## License
 
-**Copyright 2020 Michal Drabik**
+**Copyright 2023 Michal Drabik**
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.  
+
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU General Public License for more details.  
+
 You should have received a copy of the GNU General Public License along with this program.   
 If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
