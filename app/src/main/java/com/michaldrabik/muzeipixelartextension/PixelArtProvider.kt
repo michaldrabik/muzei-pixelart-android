@@ -15,10 +15,10 @@ class PixelArtProvider : MuzeiArtProvider() {
     private const val COMMAND_DOWNLOAD_ID = 1
   }
 
-  private val workManager by lazy { WorkManager.getInstance() }
-
   override fun onLoadRequested(initial: Boolean) {
-    workManager.enqueue(PixelArtWorker.createRequest())
+    context?.let {
+      WorkManager.getInstance(it).enqueue(PixelArtWorker.createRequest())
+    }
   }
 
   /* kept for backward compatibility with Muzei 3.3 */
@@ -56,7 +56,7 @@ class PixelArtProvider : MuzeiArtProvider() {
         IconCompat.createWithResource(context, R.drawable.muzei_launch_command),
         context.getString(R.string.text_download),
         context.getString(R.string.text_download),
-        PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
       ).apply {
         setShouldShowIcon(false)
       }
