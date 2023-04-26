@@ -26,8 +26,10 @@ class PixelArtProvider : MuzeiArtProvider() {
   override fun getCommands(artwork: Artwork) = when {
     Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> emptyList()
     else -> listOf(
-      com.google.android.apps.muzei.api.UserCommand(COMMAND_DOWNLOAD_ID,
-        context?.getString(R.string.text_download))
+      com.google.android.apps.muzei.api.UserCommand(
+        COMMAND_DOWNLOAD_ID,
+        context?.getString(R.string.text_download)
+      )
     )
   }
 
