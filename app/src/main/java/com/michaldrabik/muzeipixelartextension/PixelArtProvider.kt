@@ -54,7 +54,7 @@ class PixelArtProvider : MuzeiArtProvider() {
         IconCompat.createWithResource(context, R.drawable.muzei_launch_command),
         context.getString(R.string.text_download),
         context.getString(R.string.text_download),
-        PendingIntent.getActivity(context, 0, intent, 0)
+        PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
       ).apply {
         setShouldShowIcon(false)
       }
