@@ -4,26 +4,29 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-  compileSdk 33
 
   defaultConfig {
-    applicationId "com.michaldrabik.muzeipixelartextension"
+    namespace 'com.michaldrabik.muzeipixelartextension'
+
     minSdkVersion 21
-    targetSdkVersion 33
+    targetSdkVersion 34
+    compileSdk 34
+
     versionCode 15
     versionName "1.2.2"
+
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     def authorityValue = "com.michaldrabik.muzeipixelartextensionauthority"
     manifestPlaceholders = [
-        pixelArtAuthority: authorityValue
+      pixelArtAuthority: authorityValue
     ]
     buildConfigField "String", "PIXELART_AUTHORITY", "\"${authorityValue}\""
   }
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
   }
 
   signingConfigs {
@@ -49,7 +52,7 @@ android {
     }
   }
 
-  flavorDimensions "stage"
+  flavorDimensions = ["stage"]
   productFlavors {
     development {
       dimension "stage"
@@ -60,22 +63,26 @@ android {
       dimension "stage"
     }
   }
+  buildFeatures {
+    buildConfig true
+  }
 }
 
 dependencies {
   implementation fileTree(include: ['*.jar'], dir: 'libs')
 
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  implementation "androidx.appcompat:appcompat:1.6.1"
-  implementation "androidx.work:work-runtime-ktx:2.8.1"
+  implementation "androidx.appcompat:appcompat:1.7.0"
+  implementation "androidx.work:work-runtime-ktx:2.9.0"
 
-  implementation "com.squareup.retrofit2:retrofit:2.9.0"
-  implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
-  implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
+  implementation "com.squareup.retrofit2:retrofit:2.11.0"
+  implementation "com.squareup.retrofit2:converter-moshi:2.11.0"
+  implementation "com.squareup.moshi:moshi-kotlin:1.15.1"
+  implementation "com.squareup.okhttp3:logging-interceptor:4.11.0"
 
-  implementation "com.google.android.apps.muzei:muzei-api:3.4.1"
-  implementation "com.google.firebase:firebase-crashlytics:18.3.6"
-  implementation "com.google.firebase:firebase-analytics:21.2.2"
+  implementation "com.google.android.apps.muzei:muzei-api:3.4.2"
+  implementation "com.google.firebase:firebase-crashlytics:19.0.2"
+  implementation "com.google.firebase:firebase-analytics:22.0.2"
 
   testImplementation "junit:junit:4.13.2"
 }

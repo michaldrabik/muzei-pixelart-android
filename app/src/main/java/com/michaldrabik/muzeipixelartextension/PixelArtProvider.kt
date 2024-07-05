@@ -22,7 +22,11 @@ class PixelArtProvider : MuzeiArtProvider() {
   }
 
   /* kept for backward compatibility with Muzei 3.3 */
-  @Suppress("OverridingDeprecatedMember", "DEPRECATION")
+  @Deprecated(
+    "Override getCommandActions() to set an icon and PendingIntent that should be triggered. This method will still be called on devices that have an older version of Muzei installed.",
+    replaceWith = ReplaceWith("getCommandActions(artwork)")
+  )
+  @Suppress("DEPRECATION")
   override fun getCommands(artwork: Artwork) = when {
     Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> emptyList()
     else -> listOf(
@@ -34,7 +38,7 @@ class PixelArtProvider : MuzeiArtProvider() {
   }
 
   /* kept for backward compatibility with Muzei 3.3 */
-  @Suppress("OverridingDeprecatedMember")
+  @Deprecated("Provide your own PendingIntent for each RemoteActionCompat returned by getCommandActions(). This method will still be called on devices that have an older version of Muzei installed if you continue to override getCommands().")
   override fun onCommand(artwork: Artwork, id: Int) {
     when (id) {
       COMMAND_DOWNLOAD_ID -> {
@@ -56,7 +60,12 @@ class PixelArtProvider : MuzeiArtProvider() {
         IconCompat.createWithResource(context, R.drawable.muzei_launch_command),
         context.getString(R.string.text_download),
         context.getString(R.string.text_download),
-        PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        PendingIntent.getActivity(
+          context,
+          0,
+          intent,
+          PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
       ).apply {
         setShouldShowIcon(false)
       }

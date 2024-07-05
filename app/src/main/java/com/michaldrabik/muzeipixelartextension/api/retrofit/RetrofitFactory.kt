@@ -3,6 +3,8 @@ package com.michaldrabik.muzeipixelartextension.api.retrofit
 import com.michaldrabik.muzeipixelartextension.API_KEY
 import com.michaldrabik.muzeipixelartextension.STAGE
 import com.michaldrabik.muzeipixelartextension.api.interceptor.AuthInterceptor
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -21,10 +23,14 @@ object RetrofitFactory {
       })
       .build()
 
+    val moshi = Moshi.Builder()
+      .addLast(KotlinJsonAdapterFactory())
+      .build()
+
     return Retrofit.Builder()
       .baseUrl("$BASE_API_URL/$STAGE/")
       .client(httpClient)
-      .addConverterFactory(MoshiConverterFactory.create())
+      .addConverterFactory(MoshiConverterFactory.create(moshi))
       .build()
   }
 }
